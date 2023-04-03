@@ -30,7 +30,14 @@ namespace webApp1.Controllers
 
         public IActionResult Client()
         {
-            return View();
+
+            var clientList = new List<Cliente>();
+            clientList.Add(new Cliente("Jaime", "1312242900","jaimendo@gmail.com",23));
+            clientList.Add(new Cliente("Hola", "1312242920", "jaimendo@gmail.com", 23));
+            clientList.Add(new Cliente("Chaop", "1312242930", "jaimendo@gmail.com", 23));
+            clientList.Add(new Cliente("Manana", "1312242940", "jaimendo@gmail.com", 23));
+            clientList.Add(new Cliente("A veces", "1312242950", "jaimendo@gmail.com", 23));
+            return View(clientList);
         }
 
         public IActionResult Inventory()
@@ -43,6 +50,7 @@ namespace webApp1.Controllers
             return View();
         }
 
+  
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
